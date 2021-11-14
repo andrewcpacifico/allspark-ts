@@ -1,6 +1,9 @@
 {
   "name": "allspark-ts",
   "private": true,
+  "scripts": {
+    "release": "lerna publish --conventional-commits --yes"
+  },
   "devDependencies": {
     "lerna": "^4.0.0"
   }
