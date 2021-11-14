@@ -27,5 +27,9 @@
   },
   "bugs": {
     "url": "https://github.com/andrewcpacifico/allspark-ts/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "directory": "dist"
   }
 }
