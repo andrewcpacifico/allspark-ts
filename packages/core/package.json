@@ -16,6 +16,8 @@
     "url": "git+https://github.com/andrewcpacifico/allspark-ts.git"
   },
   "scripts": {
+    "prepublishOnly": "npm run compile",
+    "compile": "rm -rf ./dist && tsc -p tsconfig.build.json && cp ./package* dist/",
     "test": "mocha test/unit/**/*.spec.ts"
   },
   "bugs": {

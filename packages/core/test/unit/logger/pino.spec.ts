@@ -3,7 +3,7 @@
 import sinon from 'sinon';
 import { expect } from 'chai';
 
-import PinoLogger from '../../../lib/logger/pino';
+import PinoLogger from '../../../src/logger/pino';
 
 describe('PinoLogger', function () {
   let container: any;
