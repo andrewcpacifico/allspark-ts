@@ -1,0 +1,26 @@
+version: 2
+
+defaults: &defaults
+  working_directory: ~/repo
+  machine: true
+
+jobs:
+  test:
+    <<: *defaults
+
+    steps:
+      - checkout
+      - run:
+          name: Setup project
+          command: |
+            yarn
+      - run:
+          name: Test project
+          command: |
+            lerna run test
+
+workflows:
+  version: 2
+  test:
+    jobs:
+      - test
