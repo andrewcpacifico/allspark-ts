@@ -1,2 +1,4 @@
+import ExpressServer from './express';
+
 export * from './server';
-export { default as ExpressServer } from './express';
+export { ExpressServer };

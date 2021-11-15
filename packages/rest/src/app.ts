@@ -1,9 +1,11 @@
+import express from 'express';
+
 import {
   IConfigManager,
-  NconfConfigManager,
+  nconfConfigManager,
 
   ILogger,
-  PinoLogger,
+  pinoLogger,
 
   failableFactory,
 
@@ -42,10 +44,14 @@ export default class App {
     const dependencyInjector = new AwilixDependencyInjector<TDependencyContainer>();
     this.dependencyContainer = dependencyInjector.initialize();
 
+    dependencyInjector.registerThirdPartyDependencies({
+      express,
+    });
+
     dependencyInjector.register([
       { name: 'server', dependency: ExpressServer },
-      { name: 'configManager', dependency: NconfConfigManager },
-      { name: 'logger', dependency: PinoLogger },
+      { name: 'configManager', dependency: nconfConfigManager, type: DependencyType.VALUE },
+      { name: 'logger', dependency: pinoLogger, type: DependencyType.VALUE },
       { name: 'failableFactory', dependency: failableFactory, type: DependencyType.VALUE },
     ]);
 
@@ -59,7 +65,7 @@ export default class App {
       server,
     } = this.getDependencyContainer();
 
-    configManager.load({ path: '/foo/bar' });
+    configManager.load();
     logger.init();
     server.initialize();
   }
