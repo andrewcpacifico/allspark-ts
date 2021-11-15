@@ -9,7 +9,7 @@ type TDependencies = {
 };
 
 export default class PinoLogger implements ILogger {
-  public logger: P.Logger;
+  private logger: P.Logger | undefined;
 
   constructor(private deps: TDependencies) { }
 
