@@ -16,7 +16,7 @@ export default class NconfConfigManager implements IConfigManager {
     const { env } = process;
     env.NODE_ENV = env.NODE_ENV || 'development';
 
-    nconf.file('environment', {
+    nconf.env().file('environment', {
       file: `${path}/${process.env.NODE_ENV}.json`,
     }).file('default', {
       file: `${path}/default.json`,
