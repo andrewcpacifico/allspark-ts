@@ -11,6 +11,7 @@ describe.only('NconfConfigManager', function () {
   beforeEach(function () {
     container = {
       nconf: {
+        env: sinon.stub().returnsThis(),
         file: sinon.stub().returnsThis(),
         get: sinon.stub(),
       },
@@ -71,6 +72,20 @@ describe.only('NconfConfigManager', function () {
       expect(container.nconf.file.secondCall).to.have.been.calledWith('default', {
         file: './config/default.json',
       });
+    });
+
+    it('should load env', function () {
+      const configService = new NconfConfigManager(container);
+      configService.load();
+
+      expect(container.nconf.env).to.have.been.calledOnce;
+    });
+
+    it('should load env before files', function () {
+      const configService = new NconfConfigManager(container);
+      configService.load();
+
+      expect(container.nconf.env).to.have.been.calledBefore(container.nconf.file);
     });
   });
 
