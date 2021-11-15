@@ -1,2 +1,6 @@
+import nconf from 'nconf';
+import NconfConfigManager from './nconf';
+
 export * from './config-manager';
-export { default as NconfConfigManager } from './nconf';
+export { NconfConfigManager };
+export const nconfConfigManager = new NconfConfigManager({ process, nconf });
