@@ -1,0 +1,36 @@
+{
+  "name": "@allspark-js/rest",
+  "version": "0.3.0",
+  "description": "Library to create rest apis.",
+  "keywords": [
+    "js",
+    "ts",
+    "allspark",
+    "rest"
+  ],
+  "author": "Andrew Cavalcante pacifico <andrewcpacifico@gmail.com>",
+  "homepage": "https://github.com/andrewcpacifico/allspark-ts#readme",
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrewcpacifico/allspark-ts.git"
+  },
+  "scripts": {
+    "prepublishOnly": "npm run compile",
+    "compile": "rm -rf ./dist && tsc -p tsconfig.build.json && cp ./package* dist/",
+    "test": "mocha test/unit/**/*.spec.ts",
+    "test:unit:dev": "mocha test/unit/**/*.spec.ts --watch"
+  },
+  "bugs": {
+    "url": "https://github.com/andrewcpacifico/allspark-ts/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "directory": "dist"
+  },
+  "dependencies": {
+    "@allspark-js/core": "^0.3.0",
+    "express": "^4.17.1"
+  }
+}
