@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/andrewcpacifico/allspark-ts/compare/v0.4.0...v0.5.0) (2021-11-15)
+
+
+### Features
+
+* **core/di:** Add dependency injector module ([ae67e41](https://github.com/andrewcpacifico/allspark-ts/commit/ae67e410a5f97cf24d8fa090426009d34b177d34))
+* **core/di:** Add generic container type ([e0192ab](https://github.com/andrewcpacifico/allspark-ts/commit/e0192ab0f7a3e5fd79519856539e8217231b0e3e))
+
+
+
+
+
 # [0.4.0](https://github.com/andrewcpacifico/allspark-ts/compare/v0.3.0...v0.4.0) (2021-11-15)
 
 
