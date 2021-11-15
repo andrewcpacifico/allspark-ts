@@ -29,6 +29,7 @@
     "directory": "dist"
   },
   "dependencies": {
+    "awilix": "^6.0.0",
     "nconf": "^0.11.3",
     "pino": "^7.2.0"
   }
