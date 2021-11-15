@@ -1,7 +1,7 @@
 {
   "command": {
     "publish": {
-      "message": "chore(release): publish"
+      "message": "chore(release): publish %s"
     }
   },
   "npmClient": "yarn",
@@ -9,5 +9,5 @@
     "packages/*"
   ],
   "useWorkspaces": true,
-  "version": "independent"
+  "version": "0.1.0"
 }
