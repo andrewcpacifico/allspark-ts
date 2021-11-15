@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/andrewcpacifico/allspark-ts/compare/v0.5.1...v0.6.0) (2021-11-15)
+
+
+### Features
+
+* **core/config-manager:** Add default path value ([2602cec](https://github.com/andrewcpacifico/allspark-ts/commit/2602cec6387b954e2659e2e090baddc29d58bb02))
+
+
+
+
+
 ## [0.5.1](https://github.com/andrewcpacifico/allspark-ts/compare/v0.5.0...v0.5.1) (2021-11-15)
 
 
