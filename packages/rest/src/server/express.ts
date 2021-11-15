@@ -21,7 +21,7 @@ import {
 type Express = typeof expressModule;
 
 type Dependencies = {
-  config: IConfigManager;
+  configManager: IConfigManager;
   express: Express;
   logger: ILogger;
 };
@@ -167,9 +167,9 @@ export default class ExpressServer implements IServer {
   }
 
   listen() {
-    const { config, logger } = this.deps;
-    const port = config.get('restServer:port');
-    const env = config.get('NODE_ENV');
+    const { configManager, logger } = this.deps;
+    const port = configManager.get('restServer:port');
+    const env = configManager.get('NODE_ENV');
 
     return new Promise((resolve, reject) => {
       this.getApp().listen(port, () => {
