@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/andrewcpacifico/allspark-ts/compare/v0.3.0...v0.4.0) (2021-11-15)
+
+
+### Features
+
+* **core/config-manager:** Add config manager module ([5720315](https://github.com/andrewcpacifico/allspark-ts/commit/572031587fe4a5111b297f6bbacec55043c53725))
+* **core/failable:** Add new failable module ([03423eb](https://github.com/andrewcpacifico/allspark-ts/commit/03423eb2f32e27fb1a5f84d23859fcf42c181fae))
+* **rest:** Add new package rest ([e7087db](https://github.com/andrewcpacifico/allspark-ts/commit/e7087db8c56786fd60969601e81721f2a63c8942))
+
+
+
+
+
 # 0.3.0 (2021-11-15)
 
 
