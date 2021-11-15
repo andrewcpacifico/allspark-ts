@@ -2,6 +2,7 @@
   "name": "allspark-ts",
   "private": true,
   "scripts": {
+    "postinstall": "lerna bootstrap",
     "release": "lerna publish --conventional-commits --yes"
   },
   "devDependencies": {
