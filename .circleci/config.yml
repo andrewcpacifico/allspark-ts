@@ -1,8 +1,32 @@
-version: 2
+version: 2.1
 
 defaults: &defaults
   working_directory: ~/repo
   machine: true
+
+commands:
+  load-nvm:
+    steps:
+      - run:
+          name: Load NVM
+          command: |
+            echo 'export NVM_DIR="/opt/circleci/.nvm"' >> $BASH_ENV
+            echo ' [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"' >> $BASH_ENV
+  configure-yarn:
+    steps:
+      - load-nvm
+      - run:
+          name: Configure Yarn
+          command: |
+            nvm install v16.13.0
+            nvm use v16.13.0
+            nvm alias default v16.13.0
+            npm i -g yarn
+      - restore_cache:
+          keys:
+            - yarn-packages-v1-{{ .Branch }}-{{ checksum "yarn.lock" }}
+            - yarn-packages-v1-{{ .Branch }}-
+            - yarn-packages-v1-
 
 jobs:
   test:
@@ -10,6 +34,7 @@ jobs:
 
     steps:
       - checkout
+      - configure-yarn
       - run:
           name: Setup project
           command: |
