@@ -1,4 +1,7 @@
+export type TConfigLoadArgs = {
+  path?: string;
+};
 export interface IConfigManager {
   get(property: string): any;
-  load({ path }: { path: string }): void;
+  load(args?: TConfigLoadArgs): void;
 }

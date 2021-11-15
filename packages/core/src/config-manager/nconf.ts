@@ -11,7 +11,7 @@ type TDependencies = {
 export default class NconfConfigManager implements IConfigManager {
   constructor(private deps: TDependencies) {}
 
-  public load({ path }: { path: string }) {
+  public load({ path = './config' } = {}) {
     const { process, nconf } = this.deps;
     const { env } = process;
     env.NODE_ENV = env.NODE_ENV || 'development';

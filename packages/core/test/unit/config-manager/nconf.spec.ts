@@ -59,6 +59,19 @@ describe.only('NconfConfigManager', function () {
         file: '/foo/bar/default.json',
       });
     });
+
+    it('should use default config path', function () {
+      const configService = new NconfConfigManager(container);
+      configService.load();
+
+      expect(container.nconf.file).to.have.been.calledTwice;
+      expect(container.nconf.file.firstCall).to.have.been.calledWith('environment', {
+        file: './config/test.json',
+      });
+      expect(container.nconf.file.secondCall).to.have.been.calledWith('default', {
+        file: './config/default.json',
+      });
+    });
   });
 
   describe('get', function () {
