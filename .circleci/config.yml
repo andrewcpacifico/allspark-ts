@@ -42,7 +42,7 @@ jobs:
       - run:
           name: Test project
           command: |
-            lerna run test
+            yarn test
 
 workflows:
   version: 2
