@@ -2,5 +2,5 @@
   "exit": false,
   "recursive": true,
   "require": ["ts-node/register", "../../test/globals.ts"],
-  "watch-files": ["src/**/*.ts"]
+  "watch-files": ["src/**/*.ts", "test/**/*"]
 }

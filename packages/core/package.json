@@ -18,7 +18,8 @@
   "scripts": {
     "prepublishOnly": "npm run compile",
     "compile": "rm -rf ./dist && tsc -p tsconfig.build.json && cp ./package* dist/",
-    "test": "mocha test/unit/**/*.spec.ts"
+    "test": "mocha test/unit/**/*.spec.ts",
+    "test:unit:dev": "mocha test/unit/**/*.spec.ts --watch"
   },
   "bugs": {
     "url": "https://github.com/andrewcpacifico/allspark-ts/issues"
@@ -28,6 +29,8 @@
     "directory": "dist"
   },
   "dependencies": {
+    "nconf": "^0.11.3",
     "pino": "^7.2.0"
-  }
+  },
+  "devDependencies": {}
 }
