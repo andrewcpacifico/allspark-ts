@@ -15,10 +15,10 @@ import {
   RegisterArgs,
 } from './dependency-injector';
 
-export class AwilixDependencyInjector implements IDependencyInjector {
+export class AwilixDependencyInjector<C> implements IDependencyInjector<C> {
   private container!: AwilixContainer;
 
-  initialize() {
+  initialize(): C {
     this.container = createContainer();
 
     this.container.register('process', asValue(process));

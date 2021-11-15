@@ -17,8 +17,8 @@ export type LoadModulesArgs = {
   index?: string;
 };
 
-export interface IDependencyInjector {
-  initialize(): void;
+export interface IDependencyInjector<C> {
+  initialize(): C;
   loadModules(args: LoadModulesArgs): string[];
   register(args: RegisterArgs[]): void;
   registerThirdPartyDependencies(dependencies: {[key: string]: any}): void;
