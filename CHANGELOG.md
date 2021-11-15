@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.1](https://github.com/andrewcpacifico/allspark-ts/compare/v0.6.0...v0.6.1) (2021-11-15)
+
+
+### Bug Fixes
+
+* **rest/app:** Use default configManager dependency ([95b0205](https://github.com/andrewcpacifico/allspark-ts/commit/95b02053e6674eadcb71decb04bdfb8bf6e538bc))
+
+
+
+
+
 # [0.6.0](https://github.com/andrewcpacifico/allspark-ts/compare/v0.5.1...v0.6.0) (2021-11-15)
 
 
