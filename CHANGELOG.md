@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/andrewcpacifico/allspark-ts/compare/v0.6.1...v0.7.0) (2021-11-15)
+
+
+### Bug Fixes
+
+* **rest/app:** Fix dependency injection errors ([44a84bb](https://github.com/andrewcpacifico/allspark-ts/commit/44a84bb5d8ecc0bdaff5f4c3799b4897f55c09ad))
+
+
+### Features
+
+* **core/config-manager:** Load env to nconf manager ([1088b7e](https://github.com/andrewcpacifico/allspark-ts/commit/1088b7ebab33ca70d759f6209903879e9536ef85))
+* **core:** Export default instance of modules ([af50cf6](https://github.com/andrewcpacifico/allspark-ts/commit/af50cf661b45ed2bfcde621985d4890585e241f5))
+
+
+
+
+
 ## [0.6.1](https://github.com/andrewcpacifico/allspark-ts/compare/v0.6.0...v0.6.1) (2021-11-15)
 
 
