@@ -15,7 +15,7 @@ export function builder(yargs: Argv<Params>) {
 }
 
 export function handler(argv: Params) {
-  const args = ['--config', CONFIG_PATH];
+  const args = ['--config', CONFIG_PATH, './test/unit/**/*.spec.ts'];
 
   if (argv.dev) {
     args.push('--watch');
