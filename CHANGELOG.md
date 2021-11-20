@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.11.0](https://github.com/andrewcpacifico/allspark-ts/compare/v0.10.0...v0.11.0) (2021-11-20)
+
+
+### Bug Fixes
+
+* **builder/test-unit:** Set test files to load ([fcfdcdb](https://github.com/andrewcpacifico/allspark-ts/commit/fcfdcdb81c88d13d83a09864f7a8c34985bfa596))
+
+
+### Features
+
+* **builder/lint:** Add .eslintrc and update deps ([869cada](https://github.com/andrewcpacifico/allspark-ts/commit/869cada5bac25e5690cafd6203b80710b74a5ce0))
+
+
+
+
+
 # [0.10.0](https://github.com/andrewcpacifico/allspark-ts/compare/v0.9.0...v0.10.0) (2021-11-20)
 
 
