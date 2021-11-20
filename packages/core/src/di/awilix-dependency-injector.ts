@@ -15,8 +15,14 @@ import {
   RegisterArgs,
 } from './dependency-injector';
 
+export type DIOptions = {
+  srcPath: string;
+};
+
 export class AwilixDependencyInjector<C> implements IDependencyInjector<C> {
   private container!: AwilixContainer;
+
+  public constructor(private options: DIOptions) {}
 
   initialize(): C {
     this.container = createContainer();
@@ -31,10 +37,9 @@ export class AwilixDependencyInjector<C> implements IDependencyInjector<C> {
     suffix,
     index,
   }: LoadModulesArgs): string[] {
-    const pattern = process.env.NODE_ENV === 'production' ||
-      process.env.NODE_ENV === 'staging'
-      ? `dist/${path}/**/!(*.test).js`
-      : `src/${path}/**/!(*.test|*.d).ts`;
+    const { srcPath } = this.options;
+
+    const pattern = `${srcPath}/${path}/**/!(*.test|*.d).@(ts|js)`;
 
     const camelCase = (tokens: string[]): string => tokens.map((token, idx) => {
       if (idx === 0) {
@@ -49,7 +54,6 @@ export class AwilixDependencyInjector<C> implements IDependencyInjector<C> {
       resolverOptions: { lifetime: Lifetime.SINGLETON },
       formatName: (name, descriptor) => {
         const tokens: string[] = [];
-
         const regex = new RegExp(`.*${path}/?(.*)/${name}.*`);
         const subpath = regex.exec(descriptor.path);
         if (subpath && subpath[1] !== '') {
