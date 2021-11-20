@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.10.0](https://github.com/andrewcpacifico/allspark-ts/compare/v0.9.0...v0.10.0) (2021-11-20)
+
+
+### Features
+
+* **builder/lint:** Add lint command ([b88dc47](https://github.com/andrewcpacifico/allspark-ts/commit/b88dc47ed239d6b0ab5c58769a53bf9f990d0eda))
+* **builder/test-unit:** Add test unit command ([c19c802](https://github.com/andrewcpacifico/allspark-ts/commit/c19c802ba27933eed470aa02f9f6bcf76db1efb9))
+
+
+
+
+
 # [0.9.0](https://github.com/andrewcpacifico/allspark-ts/compare/v0.8.0...v0.9.0) (2021-11-20)
 
 

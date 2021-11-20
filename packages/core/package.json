@@ -1,6 +1,6 @@
 {
   "name": "@allspark-js/core",
-  "version": "0.9.0",
+  "version": "0.10.0",
   "description": "Core library to create js applications.",
   "keywords": [
     "js",
