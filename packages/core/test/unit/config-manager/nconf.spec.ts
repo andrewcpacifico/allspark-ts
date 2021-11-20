@@ -5,7 +5,7 @@ import sinon from 'sinon';
 
 import NconfConfigManager from '../../../src/config-manager/nconf';
 
-describe.only('NconfConfigManager', function () {
+describe('NconfConfigManager', function () {
   let container: any;
 
   beforeEach(function () {

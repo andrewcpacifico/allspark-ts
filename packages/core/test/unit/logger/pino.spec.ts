@@ -34,6 +34,16 @@ describe('PinoLogger', function () {
 
       expect(pinoSpy).to.have.been.calledOnce;
     });
+
+    it('should options to logger creationt', function () {
+      const pinoSpy = sinon.spy(container, 'pino');
+      const options = { level: 'debug' };
+
+      const logger = new PinoLogger(container);
+      logger.init({ config: options });
+
+      expect(pinoSpy).to.have.been.calledOnceWith(options);
+    });
   });
 
   describe('info', function () {

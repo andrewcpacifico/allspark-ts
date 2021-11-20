@@ -8,7 +8,7 @@ type TDependencies = {
   pino: Pino;
 };
 
-export default class PinoLogger implements ILogger {
+export default class PinoLogger implements ILogger<P.LoggerOptions> {
   private logger: P.Logger | undefined;
 
   constructor(private deps: TDependencies) { }
@@ -21,9 +21,11 @@ export default class PinoLogger implements ILogger {
     return this.logger;
   }
 
-  init(): void {
+  init({ config = {} }: {
+    config?: P.LoggerOptions
+  } = {}): void {
     const { pino } = this.deps;
-    this.logger = pino({});
+    this.logger = pino(config);
   }
 
   info(msg: any, ...args: any[]): void {
