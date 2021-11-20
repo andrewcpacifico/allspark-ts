@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/andrewcpacifico/allspark-ts/compare/v0.7.0...v0.8.0) (2021-11-20)
+
+
+### Features
+
+* **builder:** Add new builder package ([9a12bf4](https://github.com/andrewcpacifico/allspark-ts/commit/9a12bf4cdb79f3f48912879efb1a5f444aa5934e))
+* **core/di:** Allow configure source path ([24887d3](https://github.com/andrewcpacifico/allspark-ts/commit/24887d323e3eb8b5c8bd2a4f2a8c877857ce8f62))
+* **core/logger:** Add config to init method ([9100b02](https://github.com/andrewcpacifico/allspark-ts/commit/9100b02fca44c4c7eb33097bc565e439da51b74a))
+* **core/logger:** Add pino pretty support ([cea5463](https://github.com/andrewcpacifico/allspark-ts/commit/cea54638b1ed41046f21b6f0c63d4d8fb7fc548a))
+* **rest/app:** Load modules from directories ([6369d58](https://github.com/andrewcpacifico/allspark-ts/commit/6369d588a30dfe3e5d3255522fda64d5e5d6ca96))
+* **rest/app:** Pass logger options from config ([ed331b0](https://github.com/andrewcpacifico/allspark-ts/commit/ed331b03f02113bf965893b38ce875e4ab5f5b89))
+
+
+
+
+
 # [0.7.0](https://github.com/andrewcpacifico/allspark-ts/compare/v0.6.1...v0.7.0) (2021-11-15)
 
 

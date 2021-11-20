@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/andrewcpacifico/allspark-ts/compare/v0.7.0...v0.8.0) (2021-11-20)
+
+
+### Features
+
+* **core/di:** Allow configure source path ([24887d3](https://github.com/andrewcpacifico/allspark-ts/commit/24887d323e3eb8b5c8bd2a4f2a8c877857ce8f62))
+* **core/logger:** Add config to init method ([9100b02](https://github.com/andrewcpacifico/allspark-ts/commit/9100b02fca44c4c7eb33097bc565e439da51b74a))
+* **core/logger:** Add pino pretty support ([cea5463](https://github.com/andrewcpacifico/allspark-ts/commit/cea54638b1ed41046f21b6f0c63d4d8fb7fc548a))
+
+
+
+
+
 # [0.7.0](https://github.com/andrewcpacifico/allspark-ts/compare/v0.6.1...v0.7.0) (2021-11-15)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "@allspark-js/rest",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "Library to create rest apis.",
   "keywords": [
     "js",
@@ -30,7 +30,7 @@
     "directory": "dist"
   },
   "dependencies": {
-    "@allspark-js/core": "^0.7.0",
+    "@allspark-js/core": "^0.8.0",
     "express": "^4.17.1"
   }
 }

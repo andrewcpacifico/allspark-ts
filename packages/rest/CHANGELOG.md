@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/andrewcpacifico/allspark-ts/compare/v0.7.0...v0.8.0) (2021-11-20)
+
+
+### Features
+
+* **rest/app:** Load modules from directories ([6369d58](https://github.com/andrewcpacifico/allspark-ts/commit/6369d588a30dfe3e5d3255522fda64d5e5d6ca96))
+* **rest/app:** Pass logger options from config ([ed331b0](https://github.com/andrewcpacifico/allspark-ts/commit/ed331b03f02113bf965893b38ce875e4ab5f5b89))
+
+
+
+
+
 # [0.7.0](https://github.com/andrewcpacifico/allspark-ts/compare/v0.6.1...v0.7.0) (2021-11-15)
 
 
