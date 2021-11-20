@@ -41,7 +41,12 @@ export default class App {
   }
 
   registerDependencies() {
-    const dependencyInjector = new AwilixDependencyInjector<TDependencyContainer>();
+    const srcPath = process.env.NODE_ENV === 'staging' ||
+      process.env.NODE_ENV === 'production' ? 'dist' : 'src';
+
+    const dependencyInjector = new AwilixDependencyInjector<TDependencyContainer>({
+      srcPath,
+    });
     this.dependencyContainer = dependencyInjector.initialize();
 
     dependencyInjector.registerThirdPartyDependencies({
@@ -55,21 +60,36 @@ export default class App {
       { name: 'failableFactory', dependency: failableFactory, type: DependencyType.VALUE },
     ]);
 
+    dependencyInjector.loadModules({ path: 'domain/actions', suffix: 'action' });
+    dependencyInjector.loadModules({ path: 'domain/clients', suffix: 'client' });
+    dependencyInjector.loadModules({ path: 'domain/managers', suffix: 'manager', index: 'managers' });
+    dependencyInjector.loadModules({ path: 'domain/repositories', suffix: 'repository' });
+    dependencyInjector.loadModules({ path: 'domain/services', suffix: 'service' });
+
+    dependencyInjector.loadModules({ path: 'rest/formatters', suffix: 'formatter' });
+    dependencyInjector.loadModules({ path: 'rest/handlers', suffix: 'handler' });
+    dependencyInjector.loadModules({ path: 'rest/middlewares', suffix: 'middleware', index: 'middlewares' });
+    dependencyInjector.loadModules({ path: 'rest/routers', suffix: 'router' });
+    dependencyInjector.loadModules({ path: 'rest/validators', suffix: 'validator' });
+
     return this.dependencyContainer;
   }
 
-  async initialize() {
+  async initialize(cb: Function) {
+    const container = this.getDependencyContainer();
     const {
       configManager,
       logger,
       server,
-    } = this.getDependencyContainer();
+    } = container;
 
     configManager.load();
     logger.init({
       config: configManager.get('logger'),
     });
     server.initialize();
+
+    cb(container);
   }
 
   async start() {
