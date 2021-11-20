@@ -66,7 +66,9 @@ export default class App {
     } = this.getDependencyContainer();
 
     configManager.load();
-    logger.init();
+    logger.init({
+      config: configManager.get('logger'),
+    });
     server.initialize();
   }
 
