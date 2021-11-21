@@ -2,6 +2,9 @@ import {
   IConfigManager,
   nconfConfigManager,
 
+  IMongoManager,
+  mongoManager,
+
   ILogger,
   pinoLogger,
 
@@ -22,10 +25,11 @@ import { thirdPartyDependencies } from './third-party';
 
 type TDependencyContainer = {
   bodyParserMiddleware: Handler;
-  errorHandlerMiddleware: ErrorHandler;
-  middlewares: Handler[];
   configManager: IConfigManager;
+  errorHandlerMiddleware: ErrorHandler;
   logger: ILogger;
+  middlewares: Handler[];
+  mongoManager: IMongoManager;
   server: IServer;
 };
 
@@ -68,6 +72,7 @@ export default class App {
       { name: 'errorHandlerMiddleware', dependency: errorHandlerMiddleware },
       { name: 'failableFactory', dependency: failableFactory, type: DependencyType.VALUE },
       { name: 'logger', dependency: pinoLogger, type: DependencyType.VALUE },
+      { name: 'mongoManager', dependency: mongoManager, type: DependencyType.VALUE },
       { name: 'server', dependency: ExpressServer },
     ]);
 
@@ -92,6 +97,7 @@ export default class App {
     const {
       configManager,
       logger,
+      mongoManager,
       server,
     } = container;
 
@@ -99,6 +105,7 @@ export default class App {
     logger.init({
       config: configManager.get('logger'),
     });
+    await mongoManager.connect();
     server.initialize();
 
     this.applyMiddlewares();
