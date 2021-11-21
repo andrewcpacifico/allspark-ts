@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.13.0](https://github.com/andrewcpacifico/allspark-ts/compare/v0.12.0...v0.13.0) (2021-11-21)
+
+
+### Features
+
+* **rest/app:** Apply middlewares ([75d5fbf](https://github.com/andrewcpacifico/allspark-ts/commit/75d5fbf94050687796573b17846f580719e9dee3))
+
+
+
+
+
 # [0.12.0](https://github.com/andrewcpacifico/allspark-ts/compare/v0.11.0...v0.12.0) (2021-11-21)
 
 
