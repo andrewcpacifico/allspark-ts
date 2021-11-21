@@ -1,4 +1,4 @@
-import mongo from 'mongodb';
+import * as mongo from 'mongodb';
 
 import { nconfConfigManager } from '../config-manager';
 import { pinoLogger } from '../logger';

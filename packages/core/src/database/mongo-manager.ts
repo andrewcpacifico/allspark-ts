@@ -28,7 +28,7 @@ export default class DefaultMongoManager implements IMongoManager {
 
     const url = `mongodb://${host}/${database}`;
 
-    logger.info('Connecting do mongo database');
+    logger.info(`Connecting do mongo database. ${url}`);
     try {
       this.mongoClient = await mongo.MongoClient.connect(url);
       logger.info('Mongo connection stablished');
