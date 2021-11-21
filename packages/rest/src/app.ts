@@ -11,13 +11,14 @@ import {
   DependencyType,
 } from '@allspark-js/core';
 
-import { thirdPartyDependencies } from './third-party';
+import { bodyParserMiddleware, errorHandlerMiddleware } from './middlewares';
 import {
   ErrorHandler,
   ExpressServer,
   Handler,
   IServer,
 } from './server';
+import { thirdPartyDependencies } from './third-party';
 
 type TDependencyContainer = {
   bodyParserMiddleware: Handler;
@@ -39,6 +40,17 @@ export default class App {
     return this.dependencyContainer;
   }
 
+  applyMiddlewares() {
+    const {
+      bodyParserMiddleware,
+      middlewares,
+      server,
+    } = this.getDependencyContainer();
+
+    server.applyMiddleware(bodyParserMiddleware);
+    middlewares.forEach(server.applyMiddleware.bind(server));
+  }
+
   registerDependencies() {
     const srcPath = process.env.NODE_ENV === 'staging' ||
       process.env.NODE_ENV === 'production' ? 'dist' : 'src';
@@ -51,10 +63,12 @@ export default class App {
     dependencyInjector.registerThirdPartyDependencies(thirdPartyDependencies);
 
     dependencyInjector.register([
-      { name: 'server', dependency: ExpressServer },
+      { name: 'bodyParserMiddleware', dependency: bodyParserMiddleware },
       { name: 'configManager', dependency: nconfConfigManager, type: DependencyType.VALUE },
-      { name: 'logger', dependency: pinoLogger, type: DependencyType.VALUE },
+      { name: 'errorHandlerMiddleware', dependency: errorHandlerMiddleware },
       { name: 'failableFactory', dependency: failableFactory, type: DependencyType.VALUE },
+      { name: 'logger', dependency: pinoLogger, type: DependencyType.VALUE },
+      { name: 'server', dependency: ExpressServer },
     ]);
 
     dependencyInjector.loadModules({ path: 'domain/actions', suffix: 'action' });
@@ -86,12 +100,15 @@ export default class App {
     });
     server.initialize();
 
+    this.applyMiddlewares();
+
     cb(container);
   }
 
   async start() {
-    const { server } = this.getDependencyContainer();
+    const { errorHandlerMiddleware, server } = this.getDependencyContainer();
 
+    server.applyErrorMiddleware(errorHandlerMiddleware);
     server.listen();
 
     return server;
