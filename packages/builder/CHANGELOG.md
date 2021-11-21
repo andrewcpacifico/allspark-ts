@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.14.0](https://github.com/andrewcpacifico/allspark-ts/compare/v0.13.0...v0.14.0) (2021-11-21)
+
+
+### Features
+
+* **builder:** Add support to ts paths ([f3e14d4](https://github.com/andrewcpacifico/allspark-ts/commit/f3e14d457b438a7d97e717ea2b80335b74d26d5e))
+
+
+
+
+
 # [0.13.0](https://github.com/andrewcpacifico/allspark-ts/compare/v0.12.0...v0.13.0) (2021-11-21)
 
 **Note:** Version bump only for package @allspark-js/builder

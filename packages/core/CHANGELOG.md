@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.14.0](https://github.com/andrewcpacifico/allspark-ts/compare/v0.13.0...v0.14.0) (2021-11-21)
+
+
+### Bug Fixes
+
+* **core/database:** Fix wrong mongo injection ([54b9bbe](https://github.com/andrewcpacifico/allspark-ts/commit/54b9bbea9198826b1937884bb7fbcadacf56415f))
+
+
+### Features
+
+* **core/database:** Add mongo manager ([d331e1e](https://github.com/andrewcpacifico/allspark-ts/commit/d331e1e9e929fb81bf91aaf6c405b1b6408e6d33))
+
+
+
+
+
 # [0.13.0](https://github.com/andrewcpacifico/allspark-ts/compare/v0.12.0...v0.13.0) (2021-11-21)
 
 **Note:** Version bump only for package @allspark-js/core

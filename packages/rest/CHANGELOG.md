@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.14.0](https://github.com/andrewcpacifico/allspark-ts/compare/v0.13.0...v0.14.0) (2021-11-21)
+
+
+### Features
+
+* **rest/app:** Add mongo manager ([1aa413d](https://github.com/andrewcpacifico/allspark-ts/commit/1aa413d71431c2bcb9c367c2d2c43bb3c2a7575c))
+* **rest/server:** Add controller interface ([c38f548](https://github.com/andrewcpacifico/allspark-ts/commit/c38f5483a0cb27a597301d1ab468a725aa504e6a))
+
+
+
+
+
 # [0.13.0](https://github.com/andrewcpacifico/allspark-ts/compare/v0.12.0...v0.13.0) (2021-11-21)
 
 

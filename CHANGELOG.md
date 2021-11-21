@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.14.0](https://github.com/andrewcpacifico/allspark-ts/compare/v0.13.0...v0.14.0) (2021-11-21)
+
+
+### Bug Fixes
+
+* **core/database:** Fix wrong mongo injection ([54b9bbe](https://github.com/andrewcpacifico/allspark-ts/commit/54b9bbea9198826b1937884bb7fbcadacf56415f))
+
+
+### Features
+
+* **builder:** Add support to ts paths ([f3e14d4](https://github.com/andrewcpacifico/allspark-ts/commit/f3e14d457b438a7d97e717ea2b80335b74d26d5e))
+* **core/database:** Add mongo manager ([d331e1e](https://github.com/andrewcpacifico/allspark-ts/commit/d331e1e9e929fb81bf91aaf6c405b1b6408e6d33))
+* **rest/app:** Add mongo manager ([1aa413d](https://github.com/andrewcpacifico/allspark-ts/commit/1aa413d71431c2bcb9c367c2d2c43bb3c2a7575c))
+* **rest/server:** Add controller interface ([c38f548](https://github.com/andrewcpacifico/allspark-ts/commit/c38f5483a0cb27a597301d1ab468a725aa504e6a))
+
+
+
+
+
 # [0.13.0](https://github.com/andrewcpacifico/allspark-ts/compare/v0.12.0...v0.13.0) (2021-11-21)
 
 
