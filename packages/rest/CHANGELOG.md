@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0](https://github.com/andrewcpacifico/allspark-ts/compare/v0.11.0...v0.12.0) (2021-11-21)
+
+
+### Features
+
+* **rest:** Add express validation ([151ccd4](https://github.com/andrewcpacifico/allspark-ts/commit/151ccd48ae3a0f0ba8e050b179201ca7904b0408))
+
+
+
+
+
 # [0.11.0](https://github.com/andrewcpacifico/allspark-ts/compare/v0.10.0...v0.11.0) (2021-11-20)
 
 **Note:** Version bump only for package @allspark-js/rest
