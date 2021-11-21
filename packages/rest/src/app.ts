@@ -1,5 +1,3 @@
-import express from 'express';
-
 import {
   IConfigManager,
   nconfConfigManager,
@@ -13,6 +11,7 @@ import {
   DependencyType,
 } from '@allspark-js/core';
 
+import { thirdPartyDependencies } from './third-party';
 import {
   ErrorHandler,
   ExpressServer,
@@ -49,9 +48,7 @@ export default class App {
     });
     this.dependencyContainer = dependencyInjector.initialize();
 
-    dependencyInjector.registerThirdPartyDependencies({
-      express,
-    });
+    dependencyInjector.registerThirdPartyDependencies(thirdPartyDependencies);
 
     dependencyInjector.register([
       { name: 'server', dependency: ExpressServer },

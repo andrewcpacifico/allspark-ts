@@ -5,6 +5,8 @@ import expressModule, {
 } from 'express';
 import { IConfigManager, ILogger } from '@allspark-js/core';
 
+import { ExpressValidator } from '../third-party';
+
 import {
   ErrorHandler,
   Handler,
@@ -16,6 +18,7 @@ import {
   ResponseFormatter,
   RouteHandleArgs,
   RouteHandler,
+  ValidatorSchema,
 } from './server';
 
 type Express = typeof expressModule;
@@ -24,6 +27,7 @@ type Dependencies = {
   configManager: IConfigManager;
   express: Express;
   logger: ILogger;
+  validator: ExpressValidator;
 };
 
 export default class ExpressServer implements IServer {
@@ -53,7 +57,7 @@ export default class ExpressServer implements IServer {
   }
 
   createRouter() {
-    const { express } = this.deps;
+    const { express, validator: { validate } } = this.deps;
     const expressRouter = express.Router();
 
     const getHandler = (
@@ -62,8 +66,15 @@ export default class ExpressServer implements IServer {
       handler: RouteHandler,
       formatter: ResponseFormatter,
       middlewares: Handler[] = [],
+      validatorSchema?: ValidatorSchema,
     ): ExpressHandler => {
       const middlewaresToApply = [];
+      if (validatorSchema) {
+        middlewaresToApply.push(validate(validatorSchema, {
+          keyByField: true,
+          context: true,
+        }));
+      }
       middlewaresToApply.push(...middlewares);
 
       return expressRouter[method](
@@ -86,6 +97,7 @@ export default class ExpressServer implements IServer {
         handler,
         path,
         middlewares,
+        validatorSchema,
       }: RouteHandleArgs) {
         getHandler(
           'get',
@@ -93,6 +105,7 @@ export default class ExpressServer implements IServer {
           handler,
           formatter,
           middlewares,
+          validatorSchema,
         );
       },
 
@@ -101,6 +114,7 @@ export default class ExpressServer implements IServer {
         handler,
         path,
         middlewares,
+        validatorSchema,
       }: RouteHandleArgs) {
         getHandler(
           'post',
@@ -108,6 +122,7 @@ export default class ExpressServer implements IServer {
           handler,
           formatter,
           middlewares,
+          validatorSchema,
         );
       },
 
@@ -116,6 +131,7 @@ export default class ExpressServer implements IServer {
         handler,
         path,
         middlewares,
+        validatorSchema,
       }: RouteHandleArgs) {
         getHandler(
           'put',
@@ -123,6 +139,7 @@ export default class ExpressServer implements IServer {
           handler,
           formatter,
           middlewares,
+          validatorSchema,
         );
       },
 
@@ -131,6 +148,7 @@ export default class ExpressServer implements IServer {
         handler,
         path,
         middlewares,
+        validatorSchema,
       }: RouteHandleArgs) {
         getHandler(
           'patch',
@@ -138,6 +156,7 @@ export default class ExpressServer implements IServer {
           handler,
           formatter,
           middlewares,
+          validatorSchema,
         );
       },
 
@@ -146,6 +165,7 @@ export default class ExpressServer implements IServer {
         handler,
         path,
         middlewares,
+        validatorSchema,
       }: RouteHandleArgs) {
         getHandler(
           'delete',
@@ -153,6 +173,7 @@ export default class ExpressServer implements IServer {
           handler,
           formatter,
           middlewares,
+          validatorSchema,
         );
       },
 
