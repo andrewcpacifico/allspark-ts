@@ -51,6 +51,12 @@ export type RouteHandleArgs = {
   path: string;
 }
 
+export interface IController<T = any, E = undefined> {
+  handle: RouteHandler<T, E>;
+  format: ResponseFormatter<T, E>;
+  validator?: ValidatorSchema;
+}
+
 export interface IRouter<T = any> {
   get(args: RouteHandleArgs): void;
   post(args: RouteHandleArgs): void;

@@ -77,6 +77,7 @@ export default class App {
     dependencyInjector.loadModules({ path: 'domain/repositories', suffix: 'repository' });
     dependencyInjector.loadModules({ path: 'domain/services', suffix: 'service' });
 
+    dependencyInjector.loadModules({ path: 'rest/controllers', suffix: 'controller' });
     dependencyInjector.loadModules({ path: 'rest/formatters', suffix: 'formatter' });
     dependencyInjector.loadModules({ path: 'rest/handlers', suffix: 'handler' });
     dependencyInjector.loadModules({ path: 'rest/middlewares', suffix: 'middleware', index: 'middlewares' });
