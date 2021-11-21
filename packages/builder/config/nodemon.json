@@ -1,7 +1,7 @@
 {
   "verbose": true,
   "execMap": {
-    "ts": "ts-node src/index.ts"
+    "ts": "ts-node -r tsconfig-paths/register src/index.ts"
   },
   "watch": [
     "src"
