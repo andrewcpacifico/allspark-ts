@@ -10,7 +10,7 @@
   "author": "Andrew Cavalcante pacifico <andrew.pacifico@meliuz.com.br>",
   "homepage": "https://github.com/andrewcpacifico/allspark-ts#readme",
   "license": "MIT",
-  "main": "dist/index.js",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/andrewcpacifico/allspark-ts.git"
