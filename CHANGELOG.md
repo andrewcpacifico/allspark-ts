@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.15.1](https://github.com/andrewcpacifico/allspark-ts/compare/v0.15.0...v0.15.1) (2021-11-22)
+
+
+### Bug Fixes
+
+* **rest:** Fix moment import ([719718f](https://github.com/andrewcpacifico/allspark-ts/commit/719718f4a193d8c3acfaefd4a667b131da537e42))
+
+
+
+
+
 # [0.15.0](https://github.com/andrewcpacifico/allspark-ts/compare/v0.14.0...v0.15.0) (2021-11-22)
 
 
