@@ -13,8 +13,8 @@
     "strict": true,
     "target": "es5",
     "paths": {
-      "@allspark-js/core": ["./packages/core/src"],
-      "@allspark-js/core/*": ["./packages/core/src/*"]
+      "@allspark-js/core": ["./node_modules/@allspark-js/core/src"],
+      "@allspark-js/core/*": ["./node_modules/@allspark-js/core/src/*"]
     }
   }
 }
