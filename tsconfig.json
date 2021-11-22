@@ -11,6 +11,10 @@
     "noUnusedParameters": true,
     "skipLibCheck": true,
     "strict": true,
-    "target": "es5"
+    "target": "es5",
+    "paths": {
+      "@allspark-js/core": ["./packages/core/src"],
+      "@allspark-js/core/*": ["./packages/core/src/*"]
+    }
   }
 }
