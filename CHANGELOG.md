@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.15.0](https://github.com/andrewcpacifico/allspark-ts/compare/v0.14.0...v0.15.0) (2021-11-22)
+
+
+### Features
+
+* **core:** Add moment dependency ([579d9d3](https://github.com/andrewcpacifico/allspark-ts/commit/579d9d3930e3bbf072038d86be759697a3ad7ebd))
+* **rest:** Inject moment dependency ([27ecfbf](https://github.com/andrewcpacifico/allspark-ts/commit/27ecfbf1fa9ac57ef157605c8a2ef8215a2b4c7f))
+
+
+
+
+
 # [0.14.0](https://github.com/andrewcpacifico/allspark-ts/compare/v0.13.0...v0.14.0) (2021-11-21)
 
 
