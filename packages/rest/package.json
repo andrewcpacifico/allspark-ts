@@ -1,6 +1,6 @@
 {
   "name": "@allspark-js/rest",
-  "version": "0.15.1",
+  "version": "0.15.1-rc.0",
   "description": "Library to create rest apis.",
   "keywords": [
     "js",
