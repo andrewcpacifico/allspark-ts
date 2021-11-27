@@ -20,7 +20,7 @@
     "url": "git+https://github.com/andrewcpacifico/allspark-ts.git"
   },
   "scripts": {
-    "prepublishOnly": "npm run compile",
+    "prepublishOnly": "yarn compile",
     "compile": "rm -rf ./dist && tsc -p tsconfig.build.json && cp -r ./{package.json,bin,config} dist/",
     "test": "mocha test/unit/**/*.spec.ts",
     "test:unit:dev": "mocha test/unit/**/*.spec.ts --watch"
