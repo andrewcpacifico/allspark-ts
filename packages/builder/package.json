@@ -21,7 +21,7 @@
   },
   "scripts": {
     "prepublishOnly": "yarn compile",
-    "compile": "rm -rf ./dist && tsc -p tsconfig.build.json && cp -r ./{package.json,bin,config} dist/",
+    "compile": "rm -rf ./dist && tsc -p tsconfig.build.json && cp -r ./{package.json,bin,config} dist/ && mv dist/lib/third-party dist/third-party",
     "test": "mocha test/unit/**/*.spec.ts",
     "test:unit:dev": "mocha test/unit/**/*.spec.ts --watch"
   },
@@ -47,9 +47,11 @@
     "eslint-import-resolver-typescript": "^2.5.0",
     "eslint-plugin-import": "^2.25.2",
     "mocha": "^9.1.3",
+    "nock": "^13.2.1",
     "nodemon": "^2.0.15",
     "sinon": "^12.0.1",
     "sinon-chai": "^3.7.0",
+    "supertest": "^6.1.6",
     "ts-node": "^10.4.0",
     "tsconfig-paths": "^3.12.0",
     "ttypescript": "^1.5.12",
@@ -57,6 +59,7 @@
     "yargs": "^17.2.1"
   },
   "devDependencies": {
+    "@types/supertest": "^2.0.11",
     "@types/yargs": "^17.0.7"
   }
 }
