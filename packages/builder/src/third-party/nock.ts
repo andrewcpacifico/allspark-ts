@@ -1,2 +1,2 @@
-import * as nock from 'nock';
+import nock from 'nock';
 export default nock;

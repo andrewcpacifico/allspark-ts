@@ -1,2 +1,2 @@
-import * as sinon from 'sinon';
+import sinon from 'sinon';
 export default sinon;

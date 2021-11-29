@@ -1,2 +1,2 @@
-import * as chai from 'chai';
+import chai from 'chai';
 export default chai;
