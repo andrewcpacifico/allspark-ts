@@ -23,7 +23,7 @@ import {
 } from './server';
 import { thirdPartyDependencies } from './third-party';
 
-type TDependencyContainer = {
+export type TDependencyContainer = {
   bodyParserMiddleware: Handler;
   configManager: IConfigManager;
   errorHandlerMiddleware: ErrorHandler;
