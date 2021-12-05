@@ -33,10 +33,10 @@ type TDependencyContainer = {
   server: IServer;
 };
 
-export default class App {
-  private dependencyContainer: TDependencyContainer | undefined;
+export default class App<T> {
+  private dependencyContainer: TDependencyContainer & T | undefined;
 
-  private getDependencyContainer(): TDependencyContainer {
+  private getDependencyContainer(): TDependencyContainer & T {
     if (!this.dependencyContainer) {
       throw new Error('Container not initialized');
     }
@@ -59,7 +59,7 @@ export default class App {
     const srcPath = process.env.NODE_ENV === 'staging' ||
       process.env.NODE_ENV === 'production' ? 'dist' : 'src';
 
-    const dependencyInjector = new AwilixDependencyInjector<TDependencyContainer>({
+    const dependencyInjector = new AwilixDependencyInjector<TDependencyContainer & T>({
       srcPath,
     });
     this.dependencyContainer = dependencyInjector.initialize();
@@ -92,7 +92,7 @@ export default class App {
     return this.dependencyContainer;
   }
 
-  async initialize() {
+  async initialize(): Promise<TDependencyContainer & T> {
     const container = this.getDependencyContainer();
     const {
       configManager,
