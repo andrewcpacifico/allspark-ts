@@ -92,7 +92,7 @@ export default class App {
     return this.dependencyContainer;
   }
 
-  async initialize(cb: Function) {
+  async initialize() {
     const container = this.getDependencyContainer();
     const {
       configManager,
@@ -110,7 +110,7 @@ export default class App {
 
     this.applyMiddlewares();
 
-    cb(container);
+    return container;
   }
 
   async start() {
