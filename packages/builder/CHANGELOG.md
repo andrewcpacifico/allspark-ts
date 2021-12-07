@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.16.0-alpha.8](https://github.com/andrewcpacifico/allspark-ts/compare/v0.16.0-alpha.7...v0.16.0-alpha.8) (2021-12-07)
+
+
+### Features
+
+* **builder:** Add test-integration command ([96a2b46](https://github.com/andrewcpacifico/allspark-ts/commit/96a2b464f5f103f5ef835ad719ea34e01902a8e1))
+
+
+
+
+
 ## [0.15.2-alpha.1](https://github.com/andrewcpacifico/allspark-ts/compare/v0.15.2-alpha.0...v0.15.2-alpha.1) (2021-11-27)
 
 **Note:** Version bump only for package @allspark-js/builder

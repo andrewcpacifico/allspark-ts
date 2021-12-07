@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.16.0-alpha.8](https://github.com/andrewcpacifico/allspark-ts/compare/v0.16.0-alpha.7...v0.16.0-alpha.8) (2021-12-07)
+
+
+### Features
+
+* **rest/app:** Add generic type for dependency container ([1ab8a53](https://github.com/andrewcpacifico/allspark-ts/commit/1ab8a532ebcd16545ae6dbbbe2835bde10a9a766))
+* **rest/app:** Export dependency container type ([bd58c31](https://github.com/andrewcpacifico/allspark-ts/commit/bd58c3181215983986450c5d252529f02f8b6b34))
+
+
+
+
+
 # [0.16.0-alpha.0](https://github.com/andrewcpacifico/allspark-ts/compare/v0.15.2-alpha.1...v0.16.0-alpha.0) (2021-11-28)
 
 **Note:** Version bump only for package @allspark-js/rest
