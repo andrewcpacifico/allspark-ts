@@ -17,9 +17,9 @@ export default function promMetrics({
   prometheusMiddleware
 }: TDependencies): TMetricsMiddlewareCreator {
   return (app: ExpressApp) => {
-    const options = configManager.get('prometheusMetrics');
+    const options = configManager.get('prometheusMetrics') || {};
     options.authenticate = (req: Request) =>
-      req.headers.authorization === `Basic ${configManager.get('PROMETHEUS_AUTH_TOKEN')}`
+      req.headers.authorization === `Basic ${configManager.get('PROMETHEUS_AUTH_TOKEN')}`;
 
     app.use(prometheusMiddleware(options));
   };
