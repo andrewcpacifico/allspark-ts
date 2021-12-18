@@ -1,4 +1,4 @@
-import { Express as ExpressApp } from 'express';
+import { Express as ExpressApp, Request } from 'express';
 import expressPrometheusMiddleware from 'express-prometheus-middleware';
 
 import { IConfigManager } from '@allspark-js/core';
@@ -18,6 +18,8 @@ export default function promMetrics({
 }: TDependencies): TMetricsMiddlewareCreator {
   return (app: ExpressApp) => {
     const options = configManager.get('prometheusMetrics');
+    options.authenticate = (req: Request) =>
+      req.headers.authorization === `Basic ${configManager.get('PROMETHEUS_AUTH_TOKEN')}`
 
     app.use(prometheusMiddleware(options));
   };
