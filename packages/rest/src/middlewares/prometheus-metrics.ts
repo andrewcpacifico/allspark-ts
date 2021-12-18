@@ -1,16 +1,24 @@
-import { Application as ExpressApp } from 'express';
+import { Express as ExpressApp } from 'express';
 import expressPrometheusMiddleware from 'express-prometheus-middleware';
+
+import { IConfigManager } from '@allspark-js/core';
 
 type TPromMiddleware = typeof expressPrometheusMiddleware;
 
 type TDependencies = {
+  configManager: IConfigManager;
   prometheusMiddleware: TPromMiddleware;
 };
 
 export type TMetricsMiddlewareCreator = (app: ExpressApp) => void;
 
-export default function promMetrics({ prometheusMiddleware }: TDependencies): TMetricsMiddlewareCreator {
+export default function promMetrics({
+  configManager,
+  prometheusMiddleware
+}: TDependencies): TMetricsMiddlewareCreator {
   return (app: ExpressApp) => {
-    app.use(prometheusMiddleware({}));
+    const options = configManager.get('prometheusMetrics');
+
+    app.use(prometheusMiddleware(options));
   };
 }
