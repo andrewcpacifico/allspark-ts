@@ -14,7 +14,13 @@ import {
   DependencyType,
 } from '@allspark-js/core';
 
-import { bodyParserMiddleware, errorHandlerMiddleware } from './middlewares';
+import {
+  bodyParserMiddleware,
+  errorHandlerMiddleware,
+  prometheusMetricsMiddleware,
+
+  TMetricsMiddlewareCreator
+} from './middlewares';
 import {
   ErrorHandler,
   ExpressServer,
@@ -30,6 +36,7 @@ export type TDependencyContainer = {
   logger: ILogger;
   middlewares: Handler[];
   mongoManager: IMongoManager;
+  prometheusMetricsMiddleware: TMetricsMiddlewareCreator;
   server: IServer;
 };
 
@@ -48,9 +55,11 @@ export default class App<T> {
     const {
       bodyParserMiddleware,
       middlewares,
+      prometheusMetricsMiddleware,
       server,
     } = this.getDependencyContainer();
 
+    prometheusMetricsMiddleware((server as ExpressServer).getApp());
     server.applyMiddleware(bodyParserMiddleware);
     middlewares.forEach(server.applyMiddleware.bind(server));
   }
@@ -73,6 +82,7 @@ export default class App<T> {
       { name: 'failableFactory', dependency: failableFactory, type: DependencyType.VALUE },
       { name: 'logger', dependency: pinoLogger, type: DependencyType.VALUE },
       { name: 'mongoManager', dependency: mongoManager, type: DependencyType.VALUE },
+      { name: 'prometheusMetricsMiddleware', dependency: prometheusMetricsMiddleware },
       { name: 'server', dependency: ExpressServer },
     ]);
 
