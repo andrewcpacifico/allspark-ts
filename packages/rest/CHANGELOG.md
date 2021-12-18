@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.16.0-alpha.9](https://github.com/andrewcpacifico/allspark-ts/compare/v0.16.0-alpha.8...v0.16.0-alpha.9) (2021-12-18)
+
+
+### Bug Fixes
+
+* **rest/middlewares/prometheus-metrics:** support empty config ([4cc9eaf](https://github.com/andrewcpacifico/allspark-ts/commit/4cc9eaf30625e18c0311b6514c09f8bfeef6abc1))
+
+
+### Features
+
+* **rest/middlewares/prometheus-metrics:** add authentication ([a97c537](https://github.com/andrewcpacifico/allspark-ts/commit/a97c537f4aef08907b49effed6fbf5ed6d383247))
+* **rest/middlewares/prometheus-metrics:** add config support ([8cfc0f8](https://github.com/andrewcpacifico/allspark-ts/commit/8cfc0f8d9ea0a92206e93087b3b19402e6cd92b5))
+* **rest:** add express prometheus middleware ([5284860](https://github.com/andrewcpacifico/allspark-ts/commit/5284860a03e86c5594d2c5a0b3ebdc4838e086fb))
+
+
+
+
+
 # [0.16.0-alpha.8](https://github.com/andrewcpacifico/allspark-ts/compare/v0.16.0-alpha.7...v0.16.0-alpha.8) (2021-12-07)
 
 

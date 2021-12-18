@@ -1,6 +1,6 @@
 {
   "name": "@allspark-js/rest",
-  "version": "0.16.0-alpha.8",
+  "version": "0.16.0-alpha.9",
   "description": "Library to create rest apis.",
   "keywords": [
     "js",
@@ -30,7 +30,7 @@
     "directory": "dist"
   },
   "dependencies": {
-    "@allspark-js/core": "^0.16.0-alpha.6",
+    "@allspark-js/core": "^0.16.0-alpha.9",
     "express": "^4.17.1",
     "express-prometheus-middleware": "^1.2.0",
     "express-validation": "^3.0.8"

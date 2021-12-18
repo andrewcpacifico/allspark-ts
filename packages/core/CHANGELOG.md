@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.16.0-alpha.9](https://github.com/andrewcpacifico/allspark-ts/compare/v0.16.0-alpha.8...v0.16.0-alpha.9) (2021-12-18)
+
+
+### Features
+
+* **core/rta:** add rta module ([54f6601](https://github.com/andrewcpacifico/allspark-ts/commit/54f6601cf8c3568e586492abcfff3b74990cc4cc))
+
+
+
+
+
 # [0.16.0-alpha.0](https://github.com/andrewcpacifico/allspark-ts/compare/v0.15.2-alpha.1...v0.16.0-alpha.0) (2021-11-28)
 
 
