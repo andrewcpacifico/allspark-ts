@@ -87,7 +87,7 @@ export default class PrometheusRta implements IRta {
 
   record({ metric, labels, value }: TRtaRecordArgs): void {
     const promMetric: Histogram<string> = this.getMetric({
-      type: 'counter',
+      type: 'histogram',
       name: metric,
       labels,
     }) as Histogram<string>;
