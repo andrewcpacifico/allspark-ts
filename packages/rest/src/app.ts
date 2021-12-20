@@ -8,6 +8,8 @@ import {
   ILogger,
   pinoLogger,
 
+  rta,
+
   failableFactory,
 
   AwilixDependencyInjector,
@@ -83,6 +85,7 @@ export default class App<T> {
       { name: 'logger', dependency: pinoLogger, type: DependencyType.VALUE },
       { name: 'mongoManager', dependency: mongoManager, type: DependencyType.VALUE },
       { name: 'prometheusMetricsMiddleware', dependency: prometheusMetricsMiddleware },
+      { name: 'rta', dependency: rta, type: DependencyType.VALUE },
       { name: 'server', dependency: ExpressServer },
     ]);
 
