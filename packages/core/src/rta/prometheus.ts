@@ -1,10 +1,12 @@
 import promClientModule, { Counter, Histogram, Metric } from 'prom-client';
 
+import { IConfigManager } from '../config-manager';
 import { IRta, TRtaIncArgs, TRtaRecordArgs } from './rta';
 
 type PromClient = typeof promClientModule;
 
 type TDependencies = {
+  configManager: IConfigManager;
   promClient: PromClient;
 };
 
@@ -53,12 +55,15 @@ export default class PrometheusRta implements IRta {
     name: string,
     labels?: TLabel,
   }) {
+    const { configManager } = this.deps;
+    const prefix = configManager.get('rta:metricPrefix');
     const metric = this.metrics[type];
+    const metricName = `${prefix}${name}`;
 
     const labelNames = Object.keys(labels);
     const metricData: TMetric = {
-      name,
-      help: name,
+      name: metricName,
+      help: metricName,
     };
 
     if (labels) {
