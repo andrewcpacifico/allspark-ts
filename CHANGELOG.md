@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.16.0-alpha.10](https://github.com/andrewcpacifico/allspark-ts/compare/v0.16.0-alpha.9...v0.16.0-alpha.10) (2021-12-26)
+
+
+### Bug Fixes
+
+* **core/rta/prometheus:** wrong metric type on record ([56f8aec](https://github.com/andrewcpacifico/allspark-ts/commit/56f8aec42094947117337ba66ac75e5660d75d36))
+
+
+### Features
+
+* **core/rta:** export rta instance ([2196de4](https://github.com/andrewcpacifico/allspark-ts/commit/2196de4cca49fcfab03380a304ee219595f258f2))
+* **core/rta:** prefix prometheus metrics ([d842623](https://github.com/andrewcpacifico/allspark-ts/commit/d8426232134aef6b4ae37442ab481c36f35cf427))
+* **rest/app:** inject rta instance ([21125fc](https://github.com/andrewcpacifico/allspark-ts/commit/21125fc33effc1393f775a06a5c823eeba19e126))
+
+
+
+
+
 # [0.16.0-alpha.9](https://github.com/andrewcpacifico/allspark-ts/compare/v0.16.0-alpha.8...v0.16.0-alpha.9) (2021-12-18)
 
 
