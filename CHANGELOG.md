@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.16.0-alpha.12](https://github.com/andrewcpacifico/allspark-ts/compare/v0.16.0-alpha.11...v0.16.0-alpha.12) (2023-02-13)
+
+
+### Features
+
+* **core/mongo-manager:** add support to configure port ([3ee4dc8](https://github.com/andrewcpacifico/allspark-ts/commit/3ee4dc84ab0fbbb17dc6faa65f0145455ba6c7bc))
+
+
+
+
+
 # [0.16.0-alpha.11](https://github.com/andrewcpacifico/allspark-ts/compare/v0.16.0-alpha.10...v0.16.0-alpha.11) (2023-02-13)
 
 **Note:** Version bump only for package allspark-ts
