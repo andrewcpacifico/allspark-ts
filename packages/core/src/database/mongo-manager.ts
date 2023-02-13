@@ -24,9 +24,13 @@ export default class DefaultMongoManager implements IMongoManager {
 
   public async connect() {
     const { configManager, logger, mongo } = this.deps;
-    const { host, database } = configManager.get('mongo');
+    const {
+      host,
+      database,
+      port = 27017,
+    } = configManager.get('mongo');
 
-    const url = `mongodb://${host}/${database}`;
+    const url = `mongodb://${host}:${port}/${database}`;
 
     logger.info(`Connecting do mongo database. ${url}`);
     try {
