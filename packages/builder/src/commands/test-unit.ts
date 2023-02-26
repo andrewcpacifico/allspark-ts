@@ -21,9 +21,11 @@ export function handler(argv: Params) {
     args.push('--watch');
   }
 
-  spawnSync(
+  const { status } = spawnSync(
     './node_modules/.bin/jest',
     args,
     { stdio: 'inherit' },
   );
+
+  process.exit(status || undefined);
 };
