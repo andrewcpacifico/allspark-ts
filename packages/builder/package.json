@@ -1,6 +1,6 @@
 {
   "name": "@allspark-js/builder",
-  "version": "0.16.0-alpha.12",
+  "version": "1.0.0-alpha.0",
   "description": "Builder for typescript services.",
   "bin": {
     "allspark-builder": "bin/builder"

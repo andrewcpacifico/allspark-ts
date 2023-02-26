@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.0](https://github.com/andrewcpacifico/allspark-ts/compare/v0.16.0-alpha.12...v1.0.0-alpha.0) (2023-02-26)
+
+
+### Code Refactoring
+
+* **builder:** switch mocha for jest ([a795202](https://github.com/andrewcpacifico/allspark-ts/commit/a795202550d83827a4a18713fdc5ba108ec63fa1))
+
+
+### BREAKING CHANGES
+
+* **builder:** All test suites must be refactored to support jest
+syntax.
+
+
+
+
+
 # [0.16.0-alpha.12](https://github.com/andrewcpacifico/allspark-ts/compare/v0.16.0-alpha.11...v0.16.0-alpha.12) (2023-02-13)
 
 **Note:** Version bump only for package @allspark-js/builder
