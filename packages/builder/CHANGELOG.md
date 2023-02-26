@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.1](https://github.com/andrewcpacifico/allspark-ts/compare/v1.0.0-alpha.0...v1.0.0-alpha.1) (2023-02-26)
+
+
+### Bug Fixes
+
+* **builder:** fail test-unit command when jest fail ([8e26f37](https://github.com/andrewcpacifico/allspark-ts/commit/8e26f373515ebee1feda40767ff12bf8ac3fe8c7))
+
+
+
+
+
 # [1.0.0-alpha.0](https://github.com/andrewcpacifico/allspark-ts/compare/v0.16.0-alpha.12...v1.0.0-alpha.0) (2023-02-26)
 
 
