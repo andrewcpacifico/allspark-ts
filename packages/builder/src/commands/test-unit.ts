@@ -1,7 +1,7 @@
 import { spawnSync } from 'child_process';
 import { Argv } from 'yargs';
 
-const CONFIG_PATH = './node_modules/@allspark-js/builder/config/.mocharc.json';
+const CONFIG_PATH = './node_modules/@allspark-js/builder/config/jest.config.js';
 
 type Params = {
   dev: boolean;
@@ -15,14 +15,14 @@ export function builder(yargs: Argv<Params>) {
 }
 
 export function handler(argv: Params) {
-  const args = ['--config', CONFIG_PATH, './test/unit/**/*.spec.ts'];
+  const args = ['--config', CONFIG_PATH];
 
   if (argv.dev) {
     args.push('--watch');
   }
 
   spawnSync(
-    './node_modules/.bin/mocha',
+    './node_modules/.bin/jest',
     args,
     { stdio: 'inherit' },
   );

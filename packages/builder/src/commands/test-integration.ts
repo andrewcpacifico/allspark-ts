@@ -1,16 +1,18 @@
 import { spawnSync } from 'child_process';
 
-const CONFIG_PATH = './node_modules/@allspark-js/builder/config/.mocharc.json';
+const CONFIG_PATH = './node_modules/@allspark-js/builder/config/jest.config.integration.js';
 
 export const command = 'test-integration';
 export const desc = 'Run integration tests.';
 
 export function handler() {
-  const args = ['--config', CONFIG_PATH, '--timeout', '10000', './test/integration/**/*.ts', '--exit'];
+  const args = ['-c', CONFIG_PATH, '--detectOpenHandles'];
 
-  spawnSync(
-    './node_modules/.bin/mocha',
+  const { status } = spawnSync(
+    './node_modules/.bin/jest',
     args,
     { stdio: 'inherit' },
   );
+
+  process.exit(status || undefined);
 };
