@@ -1,13 +1,7 @@
 {
-  "command": {
-    "publish": {
-      "message": "chore(release): publish %s"
-    }
-  },
-  "npmClient": "yarn",
+  "$schema": "node_modules/lerna/schemas/lerna-schema.json",
+  "version": "0.0.0",
   "packages": [
     "packages/*"
-  ],
-  "useWorkspaces": true,
-  "version": "1.0.0-alpha.1"
+  ]
 }
