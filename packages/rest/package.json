@@ -31,11 +31,11 @@
   },
   "dependencies": {
     "@allspark-js/core": "^0.16.0-alpha.12",
-    "express": "^4.18.2",
+    "express": "^4.21.0",
     "express-prometheus-middleware": "^1.2.0",
-    "express-validation": "^4.1.0"
+    "express-validation": "^4.1.1"
   },
   "devDependencies": {
-    "@types/express-prometheus-middleware": "^1.2.1"
+    "@types/express-prometheus-middleware": "^1.2.3"
   }
 }
