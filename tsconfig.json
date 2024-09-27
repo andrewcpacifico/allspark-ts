@@ -15,5 +15,6 @@
       "@allspark-js/core": ["./node_modules/@allspark-js/core/src"],
       "@allspark-js/core/*": ["./node_modules/@allspark-js/core/src/*"]
     }
-  }
+  },
+  "files": ["global.d.ts"]
 }

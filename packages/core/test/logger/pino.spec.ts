@@ -1,9 +1,6 @@
 /* tslint:disable only-arrow-functions no-unused-expression no-string-literal */
 
-import sinon from 'sinon';
-import { expect } from 'chai';
-
-import PinoLogger from '../../../src/logger/pino';
+import PinoLogger from '../../src/logger/pino';
 
 describe('PinoLogger', function () {
   let container: any;
@@ -11,38 +8,37 @@ describe('PinoLogger', function () {
 
   beforeEach(function () {
     pinoInstance = {
-      info: sinon.stub(),
-      debug: sinon.stub(),
-      error: sinon.stub(),
-      warn: sinon.stub()
+      info: jest.fn(),
+      debug: jest.fn(),
+      error: jest.fn(),
+      warn: jest.fn()
     };
     container = {
-      pino: () => pinoInstance,
+      pino: jest.fn().mockReturnValue(pinoInstance),
     };
   });
 
   afterEach(function () {
-    sinon.restore();
+    jest.restoreAllMocks();
   });
 
   describe('init', function () {
     it('should create a pino logger', function () {
-      const pinoSpy = sinon.spy(container, 'pino');
-
       const logger = new PinoLogger(container);
       logger.init();
 
-      expect(pinoSpy).to.have.been.calledOnce;
+      expect(container.pino).toHaveBeenCalledOnce();
     });
 
-    it('should options to logger creationt', function () {
-      const pinoSpy = sinon.spy(container, 'pino');
+    it('should options to logger creation', function () {
       const options = { level: 'debug' };
 
       const logger = new PinoLogger(container);
       logger.init({ config: options });
 
-      expect(pinoSpy).to.have.been.calledOnceWith(options);
+      expect(container.pino)
+        .toHaveBeenCalledOnce()
+        .toHaveBeenCalledWith(options);
     });
   });
 
@@ -54,7 +50,8 @@ describe('PinoLogger', function () {
 
       logger.info('a', ...params);
 
-      expect(pinoInstance.info).to.have.been.calledOnceWith('a', ...params);
+      expect(pinoInstance.info)
+        .toHaveBeenCalledExactlyOnceWith('a', ...params);
     });
   });
 
@@ -66,7 +63,8 @@ describe('PinoLogger', function () {
 
       logger.debug('a', ...params);
 
-      expect(pinoInstance.debug).to.have.been.calledOnceWith('a', ...params);
+      expect(pinoInstance.debug)
+        .toHaveBeenCalledExactlyOnceWith('a', ...params);
     });
   });
 
@@ -78,7 +76,8 @@ describe('PinoLogger', function () {
 
       logger.error('a', ...params);
 
-      expect(pinoInstance.error).to.have.been.calledOnceWith('a', ...params);
+      expect(pinoInstance.error)
+        .toHaveBeenCalledExactlyOnceWith('a', ...params);
     });
   });
 });
