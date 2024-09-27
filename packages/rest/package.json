@@ -30,7 +30,7 @@
     "directory": "dist"
   },
   "dependencies": {
-    "@allspark-js/core": "^0.16.0-alpha.12",
+    "@allspark-js/core": "workspace:*",
     "express": "^4.21.0",
     "express-prometheus-middleware": "^1.2.0",
     "express-validation": "^4.1.1"
