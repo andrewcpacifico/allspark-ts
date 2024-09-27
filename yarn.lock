@@ -2347,7 +2347,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "allspark-ts@workspace:."
   dependencies:
+    "@types/jest": "npm:^29.5.13"
+    jest: "npm:^29.7.0"
     lerna: "npm:8.1.2"
+    ts-jest: "npm:^29.2.5"
   languageName: unknown
   linkType: soft
 

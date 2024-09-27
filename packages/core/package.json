@@ -18,8 +18,8 @@
   "scripts": {
     "prepublishOnly": "yarn compile",
     "compile": "rm -rf ./dist && tsc -p tsconfig.build.json && cp ./package* dist/",
-    "test": "mocha test/unit/**/*.spec.ts",
-    "test:unit:dev": "mocha test/unit/**/*.spec.ts --watch"
+    "test": "yarn g:jest --config=../../jest.config.js",
+    "test:unit:dev": "yarn g:jest --config=../../jest.config.js --watch"
   },
   "bugs": {
     "url": "https://github.com/andrewcpacifico/allspark-ts/issues"
