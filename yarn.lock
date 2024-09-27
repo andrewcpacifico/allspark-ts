@@ -1918,6 +1918,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/nconf@npm:^0.10.7":
+  version: 0.10.7
+  resolution: "@types/nconf@npm:0.10.7"
+  checksum: 10c0/440891693f06ddfebbb222b5dafad1178d322c01a28fd01ee1fabc83cca7bc2e7cd127dd78dcafffcda19dea0cf20c58c56fa73560f36059ae2a68ab49816d42
+  languageName: node
+  linkType: hard
+
 "@types/node@npm:*, @types/node@npm:^22.7.2":
   version: 22.7.3
   resolution: "@types/node@npm:22.7.3"
@@ -2348,6 +2355,7 @@ __metadata:
   resolution: "allspark-ts@workspace:."
   dependencies:
     "@types/jest": "npm:^29.5.13"
+    "@types/nconf": "npm:^0.10.7"
     jest: "npm:^29.7.0"
     jest-chain: "npm:^1.1.6"
     jest-extended: "npm:^4.0.2"

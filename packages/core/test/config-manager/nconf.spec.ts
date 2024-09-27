@@ -1,9 +1,6 @@
 /* tslint:disable only-arrow-functions no-unused-expression */
 
-import { expect } from 'chai';
-import sinon from 'sinon';
-
-import NconfConfigManager from '../../../src/config-manager/nconf';
+import NconfConfigManager from '../../src/config-manager/nconf';
 
 describe('NconfConfigManager', function () {
   let container: any;
@@ -11,16 +8,16 @@ describe('NconfConfigManager', function () {
   beforeEach(function () {
     container = {
       nconf: {
-        env: sinon.stub().returnsThis(),
-        file: sinon.stub().returnsThis(),
-        get: sinon.stub(),
+        env: jest.fn().mockReturnThis(),
+        file: jest.fn().mockReturnThis(),
+        get: jest.fn(),
       },
       process: { env: { NODE_ENV: 'test' } },
     };
   });
 
   afterEach(function () {
-    sinon.restore();
+    jest.restoreAllMocks();
   });
 
   describe('load', function () {
@@ -30,10 +27,7 @@ describe('NconfConfigManager', function () {
       const configService = new NconfConfigManager(container);
       configService.load({ path: '/foo/bar' });
 
-      expect(container.process.env.NODE_ENV)
-        .to
-        .be
-        .equal('development');
+      expect(container.process.env.NODE_ENV).toEqual('development');
     });
 
     it('should not fill NODE_ENV', function () {
@@ -42,21 +36,18 @@ describe('NconfConfigManager', function () {
       const configService = new NconfConfigManager(container);
       configService.load({ path: '/foo/bar' });
 
-      expect(container.process.env.NODE_ENV)
-        .to
-        .be
-        .equal('production');
+      expect(container.process.env.NODE_ENV).toEqual('production');
     });
 
     it('should load environment config', function () {
       const configService = new NconfConfigManager(container);
       configService.load({ path: '/foo/bar' });
 
-      expect(container.nconf.file).to.have.been.calledTwice;
-      expect(container.nconf.file.firstCall).to.have.been.calledWith('environment', {
+      expect(container.nconf.file).toHaveBeenCalledTimes(2);
+      expect(container.nconf.file).toHaveBeenCalledWith('environment', {
         file: '/foo/bar/test.json',
       });
-      expect(container.nconf.file.secondCall).to.have.been.calledWith('default', {
+      expect(container.nconf.file).toHaveBeenCalledWith('default', {
         file: '/foo/bar/default.json',
       });
     });
@@ -65,27 +56,27 @@ describe('NconfConfigManager', function () {
       const configService = new NconfConfigManager(container);
       configService.load();
 
-      expect(container.nconf.file).to.have.been.calledTwice;
-      expect(container.nconf.file.firstCall).to.have.been.calledWith('environment', {
+      expect(container.nconf.file).toHaveBeenCalledTimes(2);
+      expect(container.nconf.file.mock.calls[0]).toEqual(['environment', {
         file: './config/test.json',
-      });
-      expect(container.nconf.file.secondCall).to.have.been.calledWith('default', {
+      }]);
+      expect(container.nconf.file.mock.calls[1]).toEqual(['default', {
         file: './config/default.json',
-      });
+      }]);
     });
 
     it('should load env', function () {
       const configService = new NconfConfigManager(container);
       configService.load();
 
-      expect(container.nconf.env).to.have.been.calledOnce;
+      expect(container.nconf.env).toHaveBeenCalledTimes(1);
     });
 
     it('should load env before files', function () {
       const configService = new NconfConfigManager(container);
       configService.load();
 
-      expect(container.nconf.env).to.have.been.calledBefore(container.nconf.file);
+      expect(container.nconf.env).toHaveBeenCalledBefore(container.nconf.file);
     });
   });
 
@@ -94,16 +85,11 @@ describe('NconfConfigManager', function () {
       const configService = new NconfConfigManager(container);
       const value = 'a';
 
-      container.nconf.get.returns(value);
+      container.nconf.get.mockImplementation(() => value);
       const result = configService.get('prop');
 
-      expect(container.nconf.get)
-        .to
-        .have
-        .been
-        .calledOnceWith('prop');
-
-      expect(result).to.be.equal(value);
+      expect(container.nconf.get).toHaveBeenCalledWith('prop');
+      expect(result).toEqual(value);
     });
   });
 });
