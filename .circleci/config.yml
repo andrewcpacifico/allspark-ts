@@ -18,10 +18,11 @@ commands:
       - run:
           name: Configure Yarn
           command: |
-            nvm install v16.13.0
-            nvm use v16.13.0
-            nvm alias default v16.13.0
-            npm i -g yarn
+            nvm install v20.17.0
+            nvm use v20.17.0
+            nvm alias default v20.17.0
+            corepack enable
+            yarn set version berry
       - restore_cache:
           keys:
             - yarn-packages-v1-{{ .Branch }}-{{ checksum "yarn.lock" }}
@@ -38,10 +39,14 @@ jobs:
       - run:
           name: Setup project
           command: |
+            corepack enable
+            yarn set version berry
             yarn
       - run:
           name: Test project
           command: |
+            corepack enable
+            yarn set version berry
             yarn test
 
 workflows:
