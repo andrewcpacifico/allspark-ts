@@ -17,7 +17,7 @@
   },
   "scripts": {
     "prepublishOnly": "yarn compile",
-    "compile": "rm -rf ./dist && tsc -p tsconfig.build.json && cp ./package* dist/",
+    "compile": "rm -rf ./dist && yarn g:tsc -p tsconfig.build.json && cp ./package* dist/",
     "test": "yarn g:jest --config=../../jest.config.js",
     "test:unit:dev": "yarn g:jest --config=../../jest.config.js --watch"
   },

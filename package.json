@@ -6,15 +6,20 @@
     "packages/*"
   ],
   "scripts": {
-    "g:jest": "cd $INIT_CWD && jest"
+    "g:jest": "cd $INIT_CWD && jest",
+    "g:tsc": "cd $INIT_CWD && tsc",
+    "g:copyfiles": "cd $INIT_CWD && copyfiles "
   },
   "devDependencies": {
+    "@types/copyfiles": "^2",
     "@types/jest": "^29.5.13",
     "@types/nconf": "^0.10.7",
+    "copyfiles": "^2.4.1",
     "jest": "^29.7.0",
     "jest-chain": "^1.1.6",
     "jest-extended": "^4.0.2",
     "lerna": "8.1.2",
-    "ts-jest": "^29.2.5"
+    "ts-jest": "^29.2.5",
+    "typescript": "^5.6.2"
   }
 }

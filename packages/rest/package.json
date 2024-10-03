@@ -18,7 +18,7 @@
   },
   "scripts": {
     "prepublishOnly": "yarn compile",
-    "compile": "rm -rf ./dist && tsc -p tsconfig.build.json && cp ./package* dist/",
+    "compile": "rm -rf ./dist && yarn g:tsc -p tsconfig.build.json && cp ./package* dist/",
     "test": "echo 'TODO'",
     "test:unit:dev": "mocha test/unit/**/*.spec.ts --watch"
   },
