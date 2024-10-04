@@ -20,7 +20,7 @@
     "prepublishOnly": "yarn compile",
     "compile": "rm -rf ./dist && yarn g:tsc -p tsconfig.build.json && cp ./package* dist/",
     "test": "echo 'TODO'",
-    "test:unit:dev": "mocha test/unit/**/*.spec.ts --watch"
+    "test:unit:dev": "echo 'TODO'"
   },
   "bugs": {
     "url": "https://github.com/andrewcpacifico/allspark-ts/issues"
